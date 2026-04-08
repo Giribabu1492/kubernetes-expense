@@ -22,8 +22,8 @@ spec:
         project: expense
     spec:
       containers:
-      - name: mysql:8.0.45
-        image: mysql:8.0.45
+      - name: mysql
+        image: mysql:8.0
         ports:
         - containerPort: 3306
 # ---
