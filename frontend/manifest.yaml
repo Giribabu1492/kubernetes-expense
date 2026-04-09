@@ -25,21 +25,21 @@ spec:
       - name: nginx
         image: giri1492/frontend:1.0.0
         ports:
-          containerPort: 8080
+        - containerPort: 8080   # ✅ FIXED
+
 ---
-kind: Service
 apiVersion: v1
-metadata: 
+kind: Service
+metadata:
   name: frontend
   namespace: expense
 spec:
   type: LoadBalancer
   selector:
     app: frontend
-    tier: web
+    tier: frontend   # ✅ FIXED
     purpose: expense
   ports:
   - protocol: TCP
     port: 80
     targetPort: 8080
-     
